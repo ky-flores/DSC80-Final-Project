@@ -43,10 +43,10 @@ The original DataFrame contains 1534 rows and 57 columns to represent the 1534 o
 
 To clean the data, several steps were performed. 
 
-Step 1: Remove irrelevant rows that made up the first couple rows of the raw dataframe. 
-Step 2: Define the columns for the dataframe using one the 4th row of the dataframe.
-Step 3: Combine OUTAGE.START.DATE with OUTAGE.START.TIME and OUTAGE.RESTORATION.DATE with OUTAGE.RESTORATION.TIME to create an OUTAGE.START and OUTAGE.RESTORATION column.
-Step 4: Select the following columns to be used for analysis: "YEAR", "MONTH", "U.S._STATE", "NERC.REGION", "CLIMATE.REGION", "ANOMALY.LEVEL", "CAUSE.CATEGORY", "OUTAGE.START", "OUTAGE.RESTORATION", "OUTAGE.DURATION", "DEMAND.LOSS.MW", "CUSTOMERS.AFFECTED",  "TOTAL.PRICE", "TOTAL.SALES", "TOTAL.CUSTOMERS",  "POPPCT_URBAN" "POPDEN_URBAN", "AREAPCT_URBAN".
+Step 1: Remove irrelevant rows that made up the first couple rows of the raw dataframe.  
+Step 2: Define the columns for the dataframe using one the 4th row of the dataframe.  
+Step 3: Combine OUTAGE.START.DATE with OUTAGE.START.TIME and OUTAGE.RESTORATION.DATE with OUTAGE.RESTORATION.TIME to create an OUTAGE.START and OUTAGE.RESTORATION column.  
+Step 4: Select the following columns to be used for analysis: "YEAR", "MONTH", "U.S._STATE", "NERC.REGION", "CLIMATE.REGION", "ANOMALY.LEVEL", "CAUSE.CATEGORY", "OUTAGE.START", "OUTAGE.RESTORATION", "OUTAGE.DURATION", "DEMAND.LOSS.MW", "CUSTOMERS.AFFECTED",  "TOTAL.PRICE", "TOTAL.SALES", "TOTAL.CUSTOMERS",  "POPPCT_URBAN" "POPDEN_URBAN", "AREAPCT_URBAN".  
 Step 5: Check the following columns for values of 0 and then replacing them with NaNs: 'OUTAGE.DURATION', 'CUSTOMERS.AFFECTED', 'DEMAND.LOSS.MW'.
 
 The first few rows of the cleaned dataframe are as follows:
