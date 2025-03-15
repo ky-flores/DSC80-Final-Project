@@ -1,6 +1,7 @@
 # Exploring Power Outages
 
 By Kyle Flores
+
 DSC80 Project
 
 ## Introduction
@@ -44,9 +45,13 @@ The original DataFrame contains 1534 rows and 57 columns to represent the 1534 o
 To clean the data, several steps were performed. 
 
 Step 1: Remove irrelevant rows that made up the first couple rows of the raw dataframe.  
+
 Step 2: Define the columns for the dataframe using one the 4th row of the dataframe.  
+
 Step 3: Combine OUTAGE.START.DATE with OUTAGE.START.TIME and OUTAGE.RESTORATION.DATE with OUTAGE.RESTORATION.TIME to create an OUTAGE.START and OUTAGE.RESTORATION column.  
+
 Step 4: Select the following columns to be used for analysis: "YEAR", "MONTH", "U.S._STATE", "NERC.REGION", "CLIMATE.REGION", "ANOMALY.LEVEL", "CAUSE.CATEGORY", "OUTAGE.START", "OUTAGE.RESTORATION", "OUTAGE.DURATION", "DEMAND.LOSS.MW", "CUSTOMERS.AFFECTED",  "TOTAL.PRICE", "TOTAL.SALES", "TOTAL.CUSTOMERS",  "POPPCT_URBAN" "POPDEN_URBAN", "AREAPCT_URBAN".  
+
 Step 5: Check the following columns for values of 0 and then replacing them with NaNs: 'OUTAGE.DURATION', 'CUSTOMERS.AFFECTED', 'DEMAND.LOSS.MW'.
 
 The first few rows of the cleaned dataframe are as follows:
@@ -74,3 +79,41 @@ The first graph depicts the distribution of outages per cause category.
   frameborder="0"
 ></iframe>
 
+Looking at the image, the most commonly reported cause for outage is severe weather, followed by intentional attack. The least commonly reported causes for outage are fuel supply emergency and islanding.
+
+This next graph illustrates the amount of documented outages over time.
+
+<iframe
+  src="assets/outage_counts_over_time.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+As seen above, the amount of recorded outages spikes in the early 2010s, but returns to the previous levels in the later years.
+
+#### Bivariate Analysis
+
+The next steps of data exploration are bivariate analysis. Looking at these relationships provides information about how the different features interact and what relationships they have.
+
+The following graph shows how the total amount of customers affected by outages changed over time.
+
+<iframe
+  src="assets/customers_affected_over_time.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+The line graph above shows that certain periods have had very high amounts of customers affected, likely indicating that these periods had severe outages or many different outages. Most of the time periods tends to range about 500k to 2M customers affected by outages.
+
+This scatter plot shows the relationship between outage duration and the loss of electricity demand.
+
+<iframe
+  src="assets/duration_vs_demand_loss.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+As shown above, there is no clear relationship between outage duration and the loss of electricity demand. A few outliers are present within the data but most of the data is clustered to have a demand loss of 0-1000 MW, no matter the duration.
